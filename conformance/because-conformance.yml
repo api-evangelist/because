@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source: >-
+  https://becausemarket.com/.well-known/ucp,
+  https://becausemarket.com/.well-known/openid-configuration
+standards:
+- id: ucp-shopping
+  name: Universal Commerce Protocol (UCP) dev.ucp.shopping
+  conforms: true
+  version: '2026-04-08'
+  evidence: /.well-known/ucp advertises dev.ucp.shopping over mcp + embedded transports
+- id: oidc
+  name: OpenID Connect Discovery 1.0
+  conforms: true
+  evidence: /.well-known/openid-configuration served (Shopify Customer Accounts)
+- id: oauth2
+  name: OAuth 2.0 (RFC 6749) authorization_code
+  conforms: true
+  evidence: authorization_code + refresh_token grants with PKCE (S256) in OIDC metadata
+- id: pkce
+  name: PKCE (RFC 7636)
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256
+- id: llms-txt
+  name: llms.txt agent-instructions convention
+  conforms: true
+  evidence: /llms.txt and /agents.md published (200)
+- id: rfc9116-security-txt
+  name: security.txt (RFC 9116)
+  conforms: false
+  evidence: /.well-known/security.txt returned 404

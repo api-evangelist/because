@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: live probe of https://becausemarket.com/.well-known/*
+host: https://becausemarket.com
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: because-openid-configuration.json
+  note: Shopify customer-account OIDC discovery (issuer https://shopify.com/authentication/61841768621)
+- path: /.well-known/ucp
+  status: 200
+  file: because-ucp.json
+  note: Universal Commerce Protocol merchant profile (dev.ucp.shopping over MCP + embedded transports)
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

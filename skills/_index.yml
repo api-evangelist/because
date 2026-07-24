@@ -1,0 +1,19 @@
+generated: '2026-07-18'
+method: searched
+source: https://becausemarket.com/agents.md
+skills:
+- file: because-agents.md
+  name: Agent Instructions — Because (UCP agentic commerce)
+  description: >-
+    Provider-published agent operating instructions for the Because Market
+    storefront: read-only product browsing, and the Universal Commerce Protocol
+    (UCP) buy flow (search_catalog -> create_cart -> create_checkout ->
+    update_checkout -> complete_checkout) over the hosted MCP endpoint, with the
+    human-approval-at-payment invariant.
+  api: mcp/because-mcp.yml
+  operations:
+  - search_catalog
+  - create_cart
+  - create_checkout
+  - update_checkout
+  - complete_checkout

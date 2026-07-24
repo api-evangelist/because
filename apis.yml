@@ -1,9 +1,31 @@
 aid: because
 name: Because
-description: 'Because is a company surfaced as a portfolio company of index-ventures and added to the
-  API Evangelist network as a stub for enrichment. Sector: retail. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Because (Because Market) is a direct-to-consumer retail brand selling bladder
+  protection, incontinence products, skincare, supplements and other everyday
+  health essentials for older adults, trusted by over one million customers and
+  also distributed through Walmart, CVS, Amazon and Target. The storefront runs on
+  Shopify at becausemarket.com and exposes a modern agentic-commerce surface: a
+  published llms.txt / agents.md, a Universal Commerce Protocol (UCP) merchant
+  profile at /.well-known/ucp, a hosted MCP shopping endpoint, and Shopify Customer
+  Account OIDC. Surfaced as an Index Ventures portfolio company and profiled by the
+  API Evangelist enrichment pipeline. It has no separately published first-party
+  developer API; agents transact via the UCP shopping service with human approval
+  required at payment.
 url: https://raw.githubusercontent.com/api-evangelist/because/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://becausemarket.com/cdn/shop/files/logo_0dbfcfd7-0598-4066-b687-a768edfab4ca.webp?crop=center&height=1200&v=1669043821&width=1200
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,10 +34,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Retail
+- E-commerce
+- Health
+- Incontinence
+- Senior Care
+- Agentic Commerce
+- Shopify
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -24,4 +52,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://becausemarket.com
+  url: https://becausemarket.com
+- type: Blog
+  url: https://becausemarket.com/blogs/news
+- type: Support
+  url: https://becausemarket.com/pages/contact-us
+- type: HelpCenter
+  url: https://becausemarket.com/pages/faq
+- type: PrivacyPolicy
+  url: https://becausemarket.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://becausemarket.com/policies/terms-of-service
+- type: SignUp
+  url: https://becausemarket.com/account/register
+- type: Login
+  url: https://becausemarket.com/account/login
+- type: MCPServer
+  name: Because UCP shopping MCP
+  url: mcp/because-mcp.yml
+- type: LLMsTxt
+  url: llms/because-llms.txt
+- type: AgentSkill
+  name: Because agent instructions (UCP commerce)
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/because-well-known.yml
+- type: Authentication
+  url: authentication/because-authentication.yml
+- type: OAuthScopes
+  url: scopes/because-scopes.yml
+- type: Conformance
+  url: conformance/because-conformance.yml
+- type: DomainSecurity
+  url: security/because-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

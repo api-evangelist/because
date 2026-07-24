@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://becausemarket.com/.well-known/ucp
+docs: https://becausemarket.com/llms.txt
+server:
+  name: because-ucp-shopping
+  transport: http
+  protocol: mcp
+  url: https://becausemarket.com/api/ucp/mcp
+  alias_url: https://becausemarket-prod.myshopify.com/api/ucp/mcp
+  standard: Universal Commerce Protocol (UCP) dev.ucp.shopping
+  ucp_versions:
+  - '2026-04-08'
+  - '2026-01-23'
+  openrpc_schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+notes: >-
+  Hosted MCP endpoint provided by the Shopify UCP shopping service on the Because
+  Market storefront. Discovery is via GET /.well-known/ucp; the MCP endpoint requires
+  a UCP agent-profile handshake before tools/list will resolve. Checkout requires
+  contemporaneous human buyer approval (no unattended payment). Tools below are the
+  documented UCP shopping surface (source: /llms.txt), not fetched schemas.
+tools:
+- name: search_catalog
+  description: Search the store catalog for products matching a buyer intent.
+  source: https://becausemarket.com/llms.txt
+- name: create_cart
+  description: Create a cart and add desired items.
+  source: https://becausemarket.com/llms.txt
+- name: create_checkout
+  description: Start the purchase/checkout flow for a cart.
+  source: https://becausemarket.com/llms.txt
+- name: update_checkout
+  description: Set shipping address and delivery method on a checkout.
+  source: https://becausemarket.com/llms.txt
+- name: complete_checkout
+  description: Finalize the purchase (requires explicit buyer payment approval).
+  source: https://becausemarket.com/llms.txt
