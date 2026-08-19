@@ -14,12 +14,10 @@ server:
   - '2026-04-08'
   - '2026-01-23'
   openrpc_schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
-notes: >-
-  Hosted MCP endpoint provided by the Shopify UCP shopping service on the Because
-  Market storefront. Discovery is via GET /.well-known/ucp; the MCP endpoint requires
-  a UCP agent-profile handshake before tools/list will resolve. Checkout requires
-  contemporaneous human buyer approval (no unattended payment). Tools below are the
-  documented UCP shopping surface (source: /llms.txt), not fetched schemas.
+notes: 'Hosted MCP endpoint provided by the Shopify UCP shopping service on the Because Market storefront.
+  Discovery is via GET /.well-known/ucp; the MCP endpoint requires a UCP agent-profile handshake before
+  tools/list will resolve. Checkout requires contemporaneous human buyer approval (no unattended payment).
+  Tools below are the documented UCP shopping surface (source: /llms.txt), not fetched schemas.'
 tools:
 - name: search_catalog
   description: Search the store catalog for products matching a buyer intent.
@@ -36,3 +34,11 @@ tools:
 - name: complete_checkout
   description: Finalize the purchase (requires explicit buyer payment approval).
   source: https://becausemarket.com/llms.txt
+deployment:
+  mode: remote
+  endpoint: https://becausemarket.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
